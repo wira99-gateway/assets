@@ -1,0 +1,184 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    font-family: Arial, sans-serif;
+  }
+  .img-container {
+    width: 100vw;
+    overflow-x: hidden;
+    padding-bottom: 70px; /* ç»™åº•éƒ¨æŒ‰é’®ç•™ç©ºé—´ */
+    box-sizing: border-box;
+  }
+  .img-container img {
+    width: 100%;
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+  .fixed-btn-wrapper {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    z-index: 100;
+    pointer-events: none;
+  }
+  .fixed-btn {
+    position: static;
+    width: calc(100vw - 32px);
+    max-width: 600px;
+    box-sizing: border-box;
+    pointer-events: auto;
+    height: 70px;
+    background: linear-gradient(90deg, #ff512f, #f9d423);
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 100;
+    box-shadow: 0 -4px 20px 0 rgba(255, 81, 47, 0.3), 0 0 16px 2px #f9d423;
+    letter-spacing: 2px;
+    border-radius: 18px 18px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: transform 0.15s, box-shadow 0.15s;
+    animation: btn-bounce 1.6s infinite cubic-bezier(0.4,0,0.2,1);
+    transform-origin: center bottom;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .fixed-btn:hover {
+    transform: scale(1.04);
+    box-shadow: 0 -6px 32px 0 rgba(255, 81, 47, 0.5), 0 0 24px 4px #f9d423;
+    filter: brightness(1.08);
+  }
+  .fixed-btn .download-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+  
+  /* Social Media Buttons */
+  .social-buttons {
+    position: fixed;
+    right: 20px;
+    bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 101;
+  }
+  
+  .social-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    border: 3px solid #fff;
+  }
+  
+  .social-btn:hover {
+    transform: scale(1.1);
+  }
+  
+  .social-btn img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+  }
+  
+  .social-btn.whatsapp {
+    background-color: #25D366;
+  }
+  
+  .social-btn.facebook {
+    background-color: #1877F2;
+  }
+  
+  .social-btn.telegram {
+    background-color: #0088cc;
+  }
+  
+  .social-btn.tiktok {
+    background-color: #000000;
+  }
+  
+  /* Modal styles */
+  .modal-mask {
+    position: fixed;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 32px 24px 24px 24px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    text-align: center;
+    min-width: 260px;
+    max-width: 80vw;
+    animation: popin 0.2s;
+  }
+  @keyframes popin {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  .modal-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #222;
+  }
+  .modal-btns {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+  }
+  .modal-btn {
+    min-width: 80px;
+    padding: 10px 0;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .modal-btn.confirm {
+    background: linear-gradient(90deg, #ffb300, #ff6f00);
+    color: #fff;
+  }
+  .modal-btn.cancel {
+    background: #eee;
+    color: #333;
+  }
+  .modal-btn.confirm:hover {
+    background: linear-gradient(90deg, #ff9800, #ff3d00);
+  }
+  .modal-btn.cancel:hover {
+    background: #ddd;
+  }
+
+@keyframes btn-bounce {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
